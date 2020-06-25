@@ -86,14 +86,34 @@ Bayes' Theorem is an important tool in understanding what we really know, given 
 
 Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin? Assume we observe the following probabilities in the population: fraternal twin is 1/125 and identical twin is 1/300.  
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+```{python}
+prob_both_boys_given_identical_twins, prob_identical_twins_and_twin_brother = (1/2 * 1/300), (1/2 * 1/300)
+prob_both_boys_given_fraternal_twins = 1/4 * 1/125
+
+prob_twin_brother = (prob_both_boys_given_identical_twins 
+                     + prob_both_boys_given_fraternal_twins)
+
+# Generalized form #1: P(A|B) * P(B) = P(A and B) 
+# Generalized form #2: P(A|B) = P(A and B) / P(B)
+# In case of Elvis, P(identical twins | twin brother) = P(identical twins & twin brother) / P(twin brother)
+
+prob_identical_twins_given_twin_brother = (prob_identical_twins_and_twin_brother 
+                                           / prob_twin_brother)
+
+print('Answer:', round(prob_identical_twins_given_twin_brother, 2))
+```
+**Answer: 0.45**
 
 ---
 
 ### Q6. Bayesian &amp; Frequentist Comparison  
 How do frequentist and Bayesian statistics compare?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+**Answer:** At the most fundamental level, frequentists and Bayesians see probabilities differently. 
+
+Frequentists only assign probabilities to repeatable random events (e.g. flipping a coin) where the probabilities are equal to the long-term frequency of each event. A frequentist doesn't assign probabilities to hypotheses or to fixed, but unknown values (such as a population parameter). In contrast, a Bayesian *does* assign probabilities to hypotheses and to fixed, but unknown values such as population parameters. For example, a Bayesian would assign a probability to Donald Trump winning the 2020 Presidential Election even though that event is not repeatable.   
+
+When a frequentist tackles a statistical problem, such as "what is the mean of a certain population?", they'll collect data from a sample of the population and use that sample data to estimate the population mean. The Bayesian, in tackling this same problem, will use prior probabilities to create a probability distribution over the possible values of the mean and then use collected sample data to update their probability distribution: as the Bayesian collects more data, the Bayesian continually updates their probability distribution using Bayes' theorem, thereby narrowing in on the possible mean of the population. The frequentist would object to the Bayesian using prior probabilities because prior probabilities are subjective and do not represent long-term frequencies. 
 
 ---
 
