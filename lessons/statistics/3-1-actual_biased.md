@@ -2,8 +2,10 @@
 
 ```python
 resp = nsfg.ReadFemResp()
+
 numkdhh_pmf_actual = thinkstats2.Pmf(resp.numkdhh, label='actual')
 numkdhh_pmf_biased = BiasPmf(numkdhh_pmf_actual, label='observed')
+
 thinkplot.PrePlot(2)
 thinkplot.Pmfs([numkdhh_pmf_actual, numkdhh_pmf_biased])
 thinkplot.Config(xlabel='number of children under 18 in household', ylabel='PMF')
