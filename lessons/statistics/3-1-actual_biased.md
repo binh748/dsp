@@ -14,6 +14,7 @@ print('Difference:', numkdhh_pmf_actual.Mean() - numkdhh_pmf_biased.Mean())
 ```
 
 **Code output:**  
+![numkdhh_actual_biased_pmf](https://user-images.githubusercontent.com/62628676/85785615-7ab3c300-b6f7-11ea-8366-c519c9ba9f7c.png)  
 numkdhh actual mean: 1.024205155043831  
 numkdhh observed mean: 2.403679100664282  
 Difference: -1.3794739456204512  
